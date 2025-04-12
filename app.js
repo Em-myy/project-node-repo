@@ -3,12 +3,13 @@ const morgan = require('morgan');
 const mongoose = require('mongoose')
 const { render } = require('ejs');
 const blogRoutes = require('./routes/blogRoutes');
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
 const dbURI = 'mongodb+srv://emmanuel:KGtTH35RYKsDV2Sg@nodecluster.napstdi.mongodb.net/?retryWrites=true&w=majority&appName=nodecluster'
 mongoose.connect(dbURI)
-    .then(() => app.listen(3000))
+    .then(() => app.listen(PORT))
     .catch((err) => console.log(err))
 
 app.set('view engine', 'ejs');
