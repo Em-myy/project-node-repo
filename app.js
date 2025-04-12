@@ -8,7 +8,7 @@ const app = express();
 
 const dbURI = 'mongodb+srv://emmanuel:KGtTH35RYKsDV2Sg@nodecluster.napstdi.mongodb.net/?retryWrites=true&w=majority&appName=nodecluster'
 mongoose.connect(dbURI)
-    .then(() => app.listen(3000))
+    .then(() => app.listen(PORT, '0.0.0.0'))
     .catch((err) => console.log(err))
 
 app.set('view engine', 'ejs');
